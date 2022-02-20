@@ -16,7 +16,21 @@ A. Kotlin Basic
 10. [Unit Returning Function](#unit-returning-function)
 11. [Function Return Type](#function-return-type)
 12. [Single Expression Function](#single-expression-function)
-
+13. [Function Varargs Parameter](#function-varargs-parameter)
+14. [Extension Function](#extension-function)
+15. [Function Infix Notation](#function-infix-notation)
+16. [Function Scope](#function-scope)
+17. [Return If & When](#return-if-&-when)
+18. [Recursive Function](#recursive-function)
+19. [Tail Recursive Function](#tail-recursive-function)
+20. [Lambda Expression](#lambda-expression)
+21. [Higher Order Function](#higher-order-function)
+22. [Anonymous Function](#anonymous-function)
+23. [Closure](#closure)
+24. [Inline Function](#inline-function)
+25. [Label](#label)
+26. [Package & Import](#package-&-import)
+27. [Main Parameters](#main-parameters)
 
 ### When Expression
 - Selain `if expression`, untuk melakukan percabangan di Kotlin juga dapat menggunakna `when expression`
@@ -247,5 +261,405 @@ fun test(name: String): Unit = println("Hello $name")
 fun main(){
     println(sum(2))
     test("Husin")
+}
+```
+
+### Function Varargs Parameter
+- Parameter yang berada di posisi terakhir memiliki kemampuan untuk dijadikan `vararg`
+- `vararg` adalah data yang bisa menerima lebih dari satu input atau bisa disebut semacam `array`
+- Perbedaan dengan `array` adalah tidak perlu mendeklarasikan / membuat variabel terlebih dahulu sebelum dimasukkan ke function
+- Dengan menggunakan tanda koma sudah dapat mengirimkan lebih dari satu data dengan menggunakan `vararg`
+```kotlin
+// Menggunakan Array
+fun countSum(values: Array<Int>): Int {
+    var count = 0
+
+    for (value in values){
+        count += value
+    }
+
+    return count
+}
+
+// Menggunakan vararg
+fun countSum2(vararg values: Int): Int{
+    var count = 0
+
+    for (value in values){
+        count += value
+    }
+
+    return count
+}
+
+fun averageGrade(name: String, vararg grades: Int){
+    var count = 0
+    var temp = 0
+
+    for(grade in grades){
+        count += grade
+        temp++
+    }
+
+    val finalgrade = count / temp
+
+    println("Nilai rata-rata $name adalah $finalgrade")
+}
+
+fun main(){
+    // Menggunakan Array
+    val values = arrayOf(10, 10, 10)
+    val result = countSum(values)
+
+    // Menggunakan vararg
+    val result2 = countSum2(10, 10, 10)
+
+    println("Hasil result = $result")
+    println("Hasil result2 = $result2")
+    averageGrade("Adi", 93,85,93)
+}
+```
+
+### Extension Function
+- Merupakan kemampuan untuk menambahkan function pada tipe data yang sudah ada
+- Untuk menggunakannya dengan menambahkan tipe data sebelum nama function dengan diikuti tanda titik
+```kotlin
+fun String.hello(): String{
+    // code
+}
+```
+- Untuk mengakses data di fungsi ini, bisa mengggunakan kata kunci `this`
+```kotlin
+fun String.hello(): String  = "Hello $this"
+
+fun String.printHello(): Unit = println("Hai $this")
+
+fun main(){
+    val name = "Husin"
+    
+    println(name.hello())
+    name.printHello()
+    "Muhammad".printHello()
+}
+```
+- Disarankan untuk tidak sering membuat tipe function ini, karena dapat membuat program semakin kompleks
+
+### Function Infix Notation
+- Infix Notation adalah operasi yang biasa dilakukan di operasi matematika, yakni melakukan operasi terhadap dua data
+- Untuk memanggil function infix notation, tidak wajib menggunakan tanda titik seperti extension function
+```kotlin
+infix fun String.to(type: String): String{
+    if(type == "UP") return this.toUpperCase()
+    else return this.toLowerCase()
+}
+
+fun main(){
+  // menggunakan tanda titik
+  val result  = "Husin Muhammad".to("UP")
+  // tanpa menggunakan tanda titik
+  val result2 = "Husin Muhammad" to "UP"
+
+  println("result = $result")
+  println("result = $result2")
+}
+```
+- Syarat dari Function Infix Notation,
+    1. Harus sebagai function member / function extension
+    2. Hanya memiliki satu parameter
+    3. Parameter tidak boleh varargs dan tidak memiliki nilai default
+
+### Function Scope
+- Merupakan ruang lingkup dimana sebuah function bisa diakses
+- Saat membuat function, maka secara otomatis function bisa diakses dari file kotlin manapun
+- Jika ingin membatasi hanya bisa diakses di tempat tertentu, maka dapat membuat function di dalam function
+```kotlin
+fun functionOne(){
+    println("Function 1")
+    println("Ini function 1")
+    functionTwo()
+}
+
+fun functionTwo(){
+    println("Function 2")
+    println("ini function 2")
+}
+
+fun main(){
+    fun functionThree(){
+        println("Function 3")
+        functionOne()
+        functionTwo()
+        println("ini function 3")
+    }
+    functionOne()
+    functionTwo()
+    functionThree()
+}
+```
+
+### Return If & When
+```kotlin
+fun main(){
+    fun sayHello(name: String = ""): String {
+      return if (name == "") "Hello"
+      else "Hello $name"
+    }
+
+    fun sayHai(name:String = ""): String {
+        return when(name){
+            "" -> "Hello"
+            else -> "Hello $name"
+        }
+    }
+
+    println(sayHello())
+    println(sayHello("Husin"))
+
+    println(sayHai())
+    println(sayHai("Husin"))
+}
+```
+
+### Recursive Function
+- Merupakan function yang memanggil function dirinya sendiri
+```kotlin
+fun factorialLoop(value: Int): Int {
+    return when(value){
+        1 -> 1
+        else -> value * factorialLoop(value - 1)
+    }
+}
+
+fun main(){
+    println("factorialLoop(5) = ${factorialLoop(5)}")
+}
+```
+
+### Tail Recursive Function
+- Dalam penggunaan recursive bisa ada kemungkinan terjadinya _error stack overflow_ apabila terlalu dalam
+- Solusinya dengan menggunakan tail recursive function yaitu mengubah recursive function menjadi looping saat di-compile
+- Syaratnya adalah,
+  1. Menambahkan `tailrec` di function
+  2. Saat memanggil function dirinya sendiri, hanya boleh menulis function tersebut dengan tipe datanya saja, tanpa ada tambahan operasi dengan data lain
+```kotlin
+fun main(){
+    tailrec fun display(value: Int){
+        println("Recursive $value")
+        if (value > 0) display(value - 1)
+    }
+
+    tailrec fun factorialTail(value: Int, total: Int = 1): Int{
+        return when(value){
+            1 -> total
+            else -> factorialTail(value - 1, total * value)
+        }
+    }
+
+    display(1000)
+    println(factorialTail(10))
+}
+```
+
+### lambda Expression
+- Secara sederhana merupakan function yang tidak memiliki nama. Sehingga bisa membuat function tanpa harus mendeskripsikan function-nya
+```kotlin
+fun main(){
+    // fungsi lambda
+    val exampleLambda: (String, String) -> String = { firstName: String, lastName:String ->
+        val result = "$firstName $lastName"
+        result
+    }
+  
+    println(exampleLambda("Husin", "Assegaff"))
+}
+```
+- Apabila hanya terdapat satu variabel / parameter pada lambda, maka dapat menggunakan nama variabel `it` sebagai nama parameter default dan tidak perlu dideklarasikan
+```kotlin
+fun main(){
+    // menggunakan nama variabel 'it' sebagai default apabila hanya ada 1 parameter
+    val sayHello: (String) -> String = {
+        "Hello $it"
+    }
+  
+    println(sayHello("Husin"))
+}
+```
+- Lambda juga dapat dibuat dengan `method reference`
+```kotlin
+fun toUpper(value: String): String = value.toUpperCase()
+
+fun main(){
+    // lambda dengan method reference
+    val toUpperCase: (String) -> String = ::toUpper
+
+    println(toUpperCase("Husin"))
+}
+```
+
+### Higher Order Function
+- Merupakan function yang menggunakan function sebagai parameter atau mengembalikan function
+- Digunakan untuk mendapatkan input yang fleksibel berupa lambda
+```kotlin
+fun main(){
+    fun hello(name: String, transformer: (String) -> String): String {
+        val nameTransform = transformer(name)
+        return "Hello $nameTransform"
+    }
+
+    val lambdaUpper: (String) -> String = {
+        it.toUpperCase()
+    }
+
+    val lambdaLower = {value: String -> value.toLowerCase()}
+
+    println(hello("Husin", lambdaUpper))
+    println(hello("Husin", lambdaLower))
+    println(hello("husin assegaff", { value: String -> value.toUpperCase() }))
+
+    // trailing lambda
+    val result = hello("Husin Muhammad") { value : String ->
+        value.toLowerCase()
+    }
+
+    println(result)
+}
+```
+
+### Anonymous Function
+- Lambda akan menganggap baris terakhir sebagai `return`
+- Namun, terkadang perlu menggunakan lambda tetapi `return` bisa dibuat fleksibel
+- Anonymous function merupakan solusinya, mirip dengan lambda hanya saja cara membuatnya menggunakan kata kunci `fun`
+```kotlin
+fun main(){
+    fun hello(name: String, transformer: (String) -> String): String {
+        val nameTransform = transformer(name)
+        return "Hello $nameTransform"
+    }
+
+    // anonymous function
+    val editString = fun(value: String): String {
+        return if (value == "") "ups"
+        else value.toUpperCase()
+    }
+
+    println(hello("Husin", editString))
+}
+```
+
+### Closure
+- Merupakan sebuah function, lambda ataupun anonymous function yang berinteraksi dengan data-data di sekitarnya dalam scope yang sama
+- Hati-hati dalam menggunakan fitur closure karena bisa tidak sengaja mengubah sebuah data\
+```kotlin
+fun main(){
+    var temp: Int = 0
+
+    val lambdaIncrement: () -> Unit = {
+        println("Lambda increment")
+        temp++
+    }
+
+    val anonymousIncrement = fun() {
+        println("Anonymous function increment")
+        temp++
+    }
+
+    fun functionIncrement(){
+        println("Function increment")
+        temp++
+    }
+
+    lambdaIncrement()
+    anonymousIncrement()
+    functionIncrement()
+
+    println(temp)
+}
+```
+
+### Inline Function
+- Merupakan fitur yang ada di Kotlin berupa mengubah higher order function menjadi inline function
+- Proses perubahannya adalah code di dalam higher order function akan di _duplicate_ agar saat runtime, aplikasi tidak perlu membuat object lambda secara berulang-ulang
+```kotlin
+inline fun hello(name: () -> String): String {
+    return "Hello ${name()}"
+}
+
+fun main(){
+    println(hello { "Husin" })
+}
+```
+- Saat menandai sebuah function adalah inline, maka secara otomatis semua parameter akan menjadi inline
+- Jika ingin tidak melakukan inline pada sebuah parameter, maka dapat menambahkan kata kunci `noinline`
+```kotlin
+inline fun hello2(firstName: () -> String, noinline lastName: () -> String): String {
+    return "Hello ${firstName()} ${lastName()}"
+}
+
+fun main(){
+    println(hello2({ "Husin" }, { "Assegaff" }))
+}
+```
+
+### Label
+- merupakan sebuah penanda
+- Semua expression di Kotlin dapat ditandai dengan label
+- Untuk membuatnya cukup dengan menggunakan nama label, kemudian diikuti dengan karakter `@`
+```kotlin
+fun main(){
+    loopI@ for (i in 1..10){
+        loopJ@ for (j in 1..10){
+            println("$i * $j = ${i * j}")
+        }
+    }
+}
+```
+- Kegunaanya dapat diintegrasikan dengan `break, continue, dan return`
+```kotlin
+fun test(name: String, param: (String) -> Unit): Unit = param(name)
+
+fun main(){
+    // break
+    loopI@ for (i in 1..10){
+        loopJ@ for (j in 1..10){
+            println("$i * $j = ${i * j}")
+            if (j == 10) break@loopI
+        }
+    }
+
+    // continue
+    loopI@ for (i in 1..10){
+        loopJ@ for (j in 1..10){
+            println("$i * $j = ${i * j}")
+            if (j == 5) continue@loopJ
+        }
+    }
+
+    // return
+    test("Husin") testLabel@ {
+        if (it == "HUsin") return@testLabel
+    }
+
+    println("Husin")
+}
+```
+
+### Package & Import
+a. Package
+- Package adalah tempat yang bisa digunakan untuk mengorganisir kode program yang dibuat
+- Penamaan package biasanya menggunakan _lowercase_
+- Jika membuat sub package, maka menggunakan tanda titik. contoh : `package company.database`
+
+b. Import
+- Normalnya sebuah file hanya bisa mengakses file lain yang berada dalam package yang sama. Maka jika ingin mengakses file lain di luar package dapat menggunakan `import`
+- import yang dapat dilakukan hanya bagian tertentu atau semua isi file. contohnya `import function.sayHello` atau `import function.*`
+
+
+### Main Parameters
+- `main function` dapat diberikan parameter yang biasanya merupakan input dari luar untuk konfigurasi program atau sebagainya
+```kotlin
+fun main(args: Array<String>){
+    for (value in args){
+        println(value)
+    }
 }
 ```
