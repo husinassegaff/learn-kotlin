@@ -4,33 +4,106 @@
 ## Tabel Konten
 
 A. Kotlin Basic
-1. [When Expression](#when-expression)
-2. [For Loops](#for-loops)
-3. [While Loops](#while-loops)
-4. [Do While Loops](#do-while-loops)
-5. [Break & Continue](#break-&-continue)
-6. [Function](#function)
-7. [Function Parameter](#function-parameter)
-8. [Function Default Argument](#function-default-argument)
-9. [Function Named Argument](#function-named-argument)
-10. [Unit Returning Function](#unit-returning-function)
-11. [Function Return Type](#function-return-type)
-12. [Single Expression Function](#single-expression-function)
-13. [Function Varargs Parameter](#function-varargs-parameter)
-14. [Extension Function](#extension-function)
-15. [Function Infix Notation](#function-infix-notation)
-16. [Function Scope](#function-scope)
-17. [Return If & When](#return-if-&-when)
-18. [Recursive Function](#recursive-function)
-19. [Tail Recursive Function](#tail-recursive-function)
-20. [Lambda Expression](#lambda-expression)
-21. [Higher Order Function](#higher-order-function)
-22. [Anonymous Function](#anonymous-function)
-23. [Closure](#closure)
-24. [Inline Function](#inline-function)
-25. [Label](#label)
-26. [Package & Import](#package-&-import)
-27. [Main Parameters](#main-parameters)
+1. [Tipe Data Number](#tipe-data-number)
+2. [Tipe Data Character](#tipe-data-character)
+3. [Tipe Data Boolean](#tipe-data-boolean)
+4. [When Expression](#when-expression)
+5. [For Loops](#for-loops)
+6. [While Loops](#while-loops)
+7. [Do While Loops](#do-while-loops)
+8. [Break & Continue](#break-&-continue)
+9. [Function](#function)
+10. [Function Parameter](#function-parameter)
+11. [Function Default Argument](#function-default-argument)
+12. [Function Named Argument](#function-named-argument)
+13. [Unit Returning Function](#unit-returning-function)
+14. [Function Return Type](#function-return-type)
+15. [Single Expression Function](#single-expression-function)
+16. [Function Varargs Parameter](#function-varargs-parameter)
+17. [Extension Function](#extension-function)
+18. [Function Infix Notation](#function-infix-notation)
+19. [Function Scope](#function-scope)
+20. [Return If & When](#return-if-&-when)
+21. [Recursive Function](#recursive-function)
+22. [Tail Recursive Function](#tail-recursive-function)
+23. [Lambda Expression](#lambda-expression)
+24. [Higher Order Function](#higher-order-function)
+25. [Anonymous Function](#anonymous-function)
+26. [Closure](#closure)
+27. [Inline Function](#inline-function)
+28. [Label](#label)
+29. [Package & Import](#package-&-import)
+30. [Main Parameters](#main-parameters)
+
+### Tipe Data Number
+- Integer Number
+
+  | Type| Size (bits) | Min value | Max value |
+  | :---: | :---: | :---: | :---: |
+  | Byte | 8 | -128 | 127 |
+  | Short | 16 | -32768 | 32767 |
+  | Int | 32 | -2.147.438.648 (-2^31) | 2.147.438.647 (2^31 - 1 |
+  | Long | 64 | -9.223.372.036.854.775.808 (-2^63) | 9.223.372.036.854.775.808 (2^63 - 1) |
+  
+  ```kotlin
+  var age: Byte = 30
+  var height: Int = 170
+  var distance: Short = 2000
+  var balance: Long = 10_000_000L 
+  //'_' sebagai pembatas satuan angka
+  //'L' untuk menunjukkan bahwa itu tipe data Long
+  ```
+- Floating Point Number
+
+  | Type| Size (bits) | Significant bits | Exponent bits | Decimal digits |
+  | :---: | :---: | :---: | :---: | :---: |
+  | Float | 32 | 24 | 8 | 6-7 |
+  | Double | 64 | 53 | 11 | 15-16 |
+
+  ```kotlin
+  var value: Float = 98.98F
+  var radius: Double = 234234234234.53434
+  ```
+
+- Literals
+  ```kotlin
+  var decimalLiteral: Int = 100
+  var hexadecimalLiteral: Int = 0xFF
+  var binaryLiteral: Int = 0b0001
+  ```
+- Underscore
+  ```kotlin
+  var age: Byte = 3_0
+  var height: Int = 1_7_0
+  var distance: Short = 2_000
+  ```
+
+- Conversion
+  ```kotlin
+  var number: Int = 100
+  
+  // conversion
+  var byte: Byte = number.toByte()
+  var short: Short = number.toShort()
+  var int: Int = number.toInt()
+  var long: Long = number.toLong()
+  var float: Float = number.toFloat()
+  var double: Double = number.toDouble()
+  ```
+  
+### Tipe Data Character
+- Untuk membuat data `char` di Kotlin menggunakan tanda '' (petik satu)
+  ```kotlin
+  var char1: Char = 'H'
+  var char2: Char = 'M'
+  var char3: Char = 'A'
+  ``` 
+
+### Tipe Data Boolean
+```kotlin
+var benar: Boolean = true
+var salah: Boolean = false
+```
 
 ### When Expression
 - Selain `if expression`, untuk melakukan percabangan di Kotlin juga dapat menggunakna `when expression`

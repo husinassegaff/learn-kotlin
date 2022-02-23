@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="427cfe4e-3841-4402-b74c-3e18ba83c836" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="427cfe4e-3841-4402-b74c-3e18ba83c836" name="Changes" comment="feat: update README.md">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -51,7 +51,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Kotlin.MainParameterKt">
     <configuration name="AnonymousFunctionKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
@@ -117,8 +119,34 @@
       <option name="presentableId" value="Default" />
       <updated>1645247339174</updated>
       <workItem from="1645247341156" duration="8863000" />
-      <workItem from="1645338459547" duration="11413000" />
+      <workItem from="1645338459547" duration="11854000" />
+      <workItem from="1645370465962" duration="61000" />
+      <workItem from="1645413317592" duration="23000" />
+      <workItem from="1645430243754" duration="156000" />
+      <workItem from="1645626264476" duration="1369000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: add basic-intermediate of function">
+      <created>1645370043602</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645370043602</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: add another basic concept of Kotlin">
+      <created>1645370089715</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645370089715</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: update README.md">
+      <created>1645370191857</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645370191857</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +166,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="feat: add basic-intermediate of function" />
+    <MESSAGE value="feat: add another basic concept of Kotlin" />
+    <MESSAGE value="feat: update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update README.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
