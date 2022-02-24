@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="427cfe4e-3841-4402-b74c-3e18ba83c836" name="Changes" comment="feat: update README.md">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="427cfe4e-3841-4402-b74c-3e18ba83c836" name="Changes" comment="feat: update README.md (data type)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -53,7 +52,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Kotlin.MainParameterKt">
     <configuration name="AnonymousFunctionKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
@@ -123,7 +122,9 @@
       <workItem from="1645370465962" duration="61000" />
       <workItem from="1645413317592" duration="23000" />
       <workItem from="1645430243754" duration="156000" />
-      <workItem from="1645626264476" duration="1369000" />
+      <workItem from="1645626264476" duration="1630000" />
+      <workItem from="1645630610097" duration="162000" />
+      <workItem from="1645717927525" duration="228000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add basic-intermediate of function">
       <created>1645370043602</created>
@@ -146,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645370191857</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: update README.md (data type)">
+      <created>1645627776276</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645627776276</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +177,8 @@
     <MESSAGE value="feat: add basic-intermediate of function" />
     <MESSAGE value="feat: add another basic concept of Kotlin" />
     <MESSAGE value="feat: update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update README.md" />
+    <MESSAGE value="feat: update README.md (data type)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update README.md (data type)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
