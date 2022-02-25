@@ -8,33 +8,34 @@ A. Kotlin Basic
 2. [Tipe Data Character](#tipe-data-character)
 3. [Tipe Data Boolean](#tipe-data-boolean)
 4. [Tipe Data String](#tipe-data-string)
-5. [When Expression](#when-expression)
-6. [For Loops](#for-loops)
-7. [While Loops](#while-loops)
-8. [Do While Loops](#do-while-loops)
-9. [Break & Continue](#break-&-continue)
-10. [Function](#function)
-11. [Function Parameter](#function-parameter)
-12. [Function Default Argument](#function-default-argument)
-13. [Function Named Argument](#function-named-argument)
-14. [Unit Returning Function](#unit-returning-function)
-15. [Function Return Type](#function-return-type)
-16. [Single Expression Function](#single-expression-function)
-17. [Function Varargs Parameter](#function-varargs-parameter)
-18. [Extension Function](#extension-function)
-19. [Function Infix Notation](#function-infix-notation)
-20. [Function Scope](#function-scope)
-21. [Return If & When](#return-if-&-when)
-22. [Recursive Function](#recursive-function)
-23. [Tail Recursive Function](#tail-recursive-function)
-24. [Lambda Expression](#lambda-expression)
-25. [Higher Order Function](#higher-order-function)
-26. [Anonymous Function](#anonymous-function)
-27. [Closure](#closure)
-28. [Inline Function](#inline-function)
-29. [Label](#label)
-30. [Package & Import](#package-&-import)
-31. [Main Parameters](#main-parameters)
+5. [Tipe Data Array](#tipe-data-array)
+6. [When Expression](#when-expression)
+7. [For Loops](#for-loops)
+8. [While Loops](#while-loops)
+9. [Do While Loops](#do-while-loops)
+10. [Break & Continue](#break-&-continue)
+11. [Function](#function)
+12. [Function Parameter](#function-parameter)
+13. [Function Default Argument](#function-default-argument)
+14. [Function Named Argument](#function-named-argument)
+15. [Unit Returning Function](#unit-returning-function)
+16. [Function Return Type](#function-return-type)
+17. [Single Expression Function](#single-expression-function)
+18. [Function Varargs Parameter](#function-varargs-parameter)
+19. [Extension Function](#extension-function)
+20. [Function Infix Notation](#function-infix-notation)
+21. [Function Scope](#function-scope)
+22. [Return If & When](#return-if-&-when)
+23. [Recursive Function](#recursive-function)
+24. [Tail Recursive Function](#tail-recursive-function)
+25. [Lambda Expression](#lambda-expression)
+26. [Higher Order Function](#higher-order-function)
+27. [Anonymous Function](#anonymous-function)
+28. [Closure](#closure)
+29. [Inline Function](#inline-function)
+30. [Label](#label)
+31. [Package & Import](#package-&-import)
+32. [Main Parameters](#main-parameters)
 
 ### Tipe Data Number
 - Integer Number
@@ -128,6 +129,31 @@ var fullName: String firstName + " " + firstName
 var fullName2: String = "$firstName panjangnya = ${firstName.length}"
 ```
 
+### Tipe Data Array
+```kotlin
+val members: Array<String> = arrayOf("Husin", "Assegaff")
+val values: Array<Byte> = arrayOf(100, 90, 85)
+val balances: Array<Int> = arrayOf(50_000, 1_000)
+```
+ Operasi di Array
+  
+  |Operasi| Keterangan |
+  | :---: | :---: |
+  | size | untuk mendapatkan panjang Array | 
+  | get(index) | mendapatkan data di posisi index |
+  | [index] | mendapatkan data di posisi index | 
+  | set(index, value) | mengubah data di posisi index |
+  | [index] = value | mengubah data di posisi index |
+- Secara standard array di Kotlin tidak boleh _null_. Apabila diperlukan array yang _null_,maka menggunakan `?`
+  ```kotlin
+  val names: Array<String?> = arrayOfNulls(5)
+  names.set(0, "Test")
+  names.set(1, null)
+  names.set(2, "Test")
+  names.set(3, null)
+  names.set(4, "Test")  
+  ```
+  
 
 ### When Expression
 - Selain `if expression`, untuk melakukan percabangan di Kotlin juga dapat menggunakna `when expression`
