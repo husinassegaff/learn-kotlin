@@ -9,33 +9,34 @@ A. Kotlin Basic
 3. [Tipe Data Boolean](#tipe-data-boolean)
 4. [Tipe Data String](#tipe-data-string)
 5. [Tipe Data Array](#tipe-data-array)
-6. [When Expression](#when-expression)
-7. [For Loops](#for-loops)
-8. [While Loops](#while-loops)
-9. [Do While Loops](#do-while-loops)
-10. [Break & Continue](#break-&-continue)
-11. [Function](#function)
-12. [Function Parameter](#function-parameter)
-13. [Function Default Argument](#function-default-argument)
-14. [Function Named Argument](#function-named-argument)
-15. [Unit Returning Function](#unit-returning-function)
-16. [Function Return Type](#function-return-type)
-17. [Single Expression Function](#single-expression-function)
-18. [Function Varargs Parameter](#function-varargs-parameter)
-19. [Extension Function](#extension-function)
-20. [Function Infix Notation](#function-infix-notation)
-21. [Function Scope](#function-scope)
-22. [Return If & When](#return-if-&-when)
-23. [Recursive Function](#recursive-function)
-24. [Tail Recursive Function](#tail-recursive-function)
-25. [Lambda Expression](#lambda-expression)
-26. [Higher Order Function](#higher-order-function)
-27. [Anonymous Function](#anonymous-function)
-28. [Closure](#closure)
-29. [Inline Function](#inline-function)
-30. [Label](#label)
-31. [Package & Import](#package-&-import)
-32. [Main Parameters](#main-parameters)
+6. [Tipe Data Range](#tipe-data-range)
+7. [When Expression](#when-expression)
+8. [For Loops](#for-loops)
+9. [While Loops](#while-loops)
+10. [Do While Loops](#do-while-loops)
+11. [Break & Continue](#break-&-continue)
+12. [Function](#function)
+13. [Function Parameter](#function-parameter)
+14. [Function Default Argument](#function-default-argument)
+15. [Function Named Argument](#function-named-argument)
+16. [Unit Returning Function](#unit-returning-function)
+17. [Function Return Type](#function-return-type)
+18. [Single Expression Function](#single-expression-function)
+19. [Function Varargs Parameter](#function-varargs-parameter)
+20. [Extension Function](#extension-function)
+21. [Function Infix Notation](#function-infix-notation)
+22. [Function Scope](#function-scope)
+23. [Return If & When](#return-if-&-when)
+24. [Recursive Function](#recursive-function)
+25. [Tail Recursive Function](#tail-recursive-function)
+26. [Lambda Expression](#lambda-expression)
+27. [Higher Order Function](#higher-order-function)
+28. [Anonymous Function](#anonymous-function)
+29. [Closure](#closure)
+30. [Inline Function](#inline-function)
+31. [Label](#label)
+32. [Package & Import](#package-&-import)
+33. [Main Parameters](#main-parameters)
 
 ### Tipe Data Number
 - Integer Number
@@ -154,6 +155,22 @@ val balances: Array<Int> = arrayOf(50_000, 1_000)
   names.set(4, "Test")  
   ```
   
+### Tipe Data Range
+- Operasi yang ada di Range
+  
+  |Operasi| Keterangan |
+  | :---: | :---: |
+  | count() | Mendapatkan total data di range | 
+  | contains(value) | Mengecek apakah terdapat value itu |
+  | first | Mendapatkan nilai pertama | 
+  | last | Mendapatkan nilai terakhir |
+  | step | Mendapatkan nilai tiap kenaikan |
+  ```kotlin
+      val range = 0..100
+      val range2 = 100 downTo 2
+      val range3 = 0..1000 step 10
+      val range4 = 10000 downTo 0 step 1000
+  ```
 
 ### When Expression
 - Selain `if expression`, untuk melakukan percabangan di Kotlin juga dapat menggunakna `when expression`
