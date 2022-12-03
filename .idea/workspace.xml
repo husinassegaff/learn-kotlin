@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="427cfe4e-3841-4402-b74c-3e18ba83c836" name="Changes" comment="feat: update README.md (data type Array)">
+    <list default="true" id="427cfe4e-3841-4402-b74c-3e18ba83c836" name="Changes" comment="feat: update README.md (data type Range)">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,11 +51,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Proyek/quliku/quliku-app-contractor" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Kotlin.MainParameterKt">
+  <component name="RunManager" selected="Kotlin.TestKt">
     <configuration name="AnonymousFunctionKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="learn.kotlin.basic.AnonymousFunctionKt" />
       <module name="learn-kotlin.main" />
@@ -63,13 +65,6 @@
     </configuration>
     <configuration name="ClosureKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="learn.kotlin.basic.ClosureKt" />
-      <module name="learn-kotlin.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HigherOrderFunctionKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="learn.kotlin.basic.HigherOrderFunctionKt" />
       <module name="learn-kotlin.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,20 +86,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="learn.kotlin.basic.TestKt" />
+      <module name="learn-kotlin.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Kotlin.AnonymousFunctionKt" />
       <item itemvalue="Kotlin.ClosureKt" />
-      <item itemvalue="Kotlin.HigherOrderFunctionKt" />
       <item itemvalue="Kotlin.InlineFunctionKt" />
       <item itemvalue="Kotlin.MainParameterKt" />
+      <item itemvalue="Kotlin.TestKt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.TestKt" />
         <item itemvalue="Kotlin.MainParameterKt" />
         <item itemvalue="Kotlin.InlineFunctionKt" />
         <item itemvalue="Kotlin.ClosureKt" />
         <item itemvalue="Kotlin.AnonymousFunctionKt" />
-        <item itemvalue="Kotlin.HigherOrderFunctionKt" />
       </list>
     </recent_temporary>
   </component>
@@ -126,6 +128,12 @@
       <workItem from="1645717927525" duration="323000" />
       <workItem from="1645806193675" duration="41000" />
       <workItem from="1645806417853" duration="433000" />
+      <workItem from="1645889542361" duration="300000" />
+      <workItem from="1664255161634" duration="32000" />
+      <workItem from="1669899539050" duration="723000" />
+      <workItem from="1669904636037" duration="13000" />
+      <workItem from="1669906853393" duration="2771000" />
+      <workItem from="1670062764313" duration="2656000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add basic-intermediate of function">
       <created>1645370043602</created>
@@ -169,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645806833686</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: update README.md (data type Range)">
+      <created>1645889818888</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645889818888</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +210,8 @@
     <MESSAGE value="feat: update README.md (data type)" />
     <MESSAGE value="feat: update README.md (data type String)" />
     <MESSAGE value="feat: update README.md (data type Array)" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update README.md (data type Array)" />
+    <MESSAGE value="feat: update README.md (data type Range)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update README.md (data type Range)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
